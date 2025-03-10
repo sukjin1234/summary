@@ -28,3 +28,31 @@ Tuple
     () 괄호로 표현, 요소는 , 콤마로 구분
     * Tuple 생성후 요소의 변경(생성, 삭제, 수정)은 불가능 
     +,* 연산 리스트와 동일 
+
+제어문 
+    순차구조 : 차례대로 실행
+    
+if 조건문
+    실행 상황을 판단하고 그 판단 결과에 따라 상황을 수행하는 것을 돕는 문장
+    참(True), 거짓(False)를 판단하는 식식
+
+    if 조건식 :                 if 조건식 :             if 조건식 :
+        수행문장1                   수행문장1               수행문장1
+        ...                         ...                     ...
+        수행문장n               else                    elif 조건식 :
+                                    수행문장n               ...
+                                                        else:
+                                                            ...
+블록은 들여쓰기로 구분
+
+논리 연산자                     **멤버십 연산자
+    and, or, not                    특정 값이 sequence나 collection에 포함되어 있는지 여부를 확인할 때 사용
+                                    in, not in
+조건부 표현식
+    일종의 파이썬 삼항 연산자
+
+    if score >= 60:
+        message = "succ"     -->    message = "succ" if score >= 60 else "fail"
+    else:
+        message = "fail"
+
