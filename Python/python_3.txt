@@ -1,0 +1,67 @@
+반복구조 : for/while
+
+while : 조건식이 참(True)인 경우 코드 블록을 계속 수행한다
+    
+    while 조건식 :
+        수행문장1
+        ...
+
+break : 강제로 반복문(for 포함) 빠져나가기
+continue : 강제로 반복문(for 포함)의 조건식 검사로 돌아가기
+pass : 빈 블록이 필요한 경우, 아무런 실행을 하지 않는다
+
+for ... in ...
+    (순차형태인) 군집형의 첫번째 요소부터 마지막 요소까지 차례로 변수에 대입해 반복적으로 문장을 수행할 경우 사용한다.
+
+    numbers = ["one", "two", "three"]
+    for number in numbers:
+        print(number)
+
+range() 함수 : range 타입의 연속된 숫자를 생성(읽기전용)  -> Tuple
+
+*리스트 내포(List Comprehension)
+    for와 새 항목 생성을 한 행에 결합하여, 각 새 항목을 자동으로 리스트에 추가
+
+    형식 : [표현식 for 항목 in 반복가능객체 if 조건문]
+
+enumerate() 함수
+    iterable 객체를 인자로 받아, 각 요소의 인덱스 번호와 요소 자체를 Tuple 형태로 이루어진 iterator 객체를 반환
+
+    iterable : 반복할 수 있는 객체              iterator : 순차적으로 값을 하나씩 반환할 수 있는 객체
+        : list, tuple, str ...                      : range, enumerate ... 
+
+딕셔너리 (Dictionary)
+    * 순서가 없음
+    key = value, 쌍 pair로 이루어진 정보가 0개 이상 모여있음
+    list, tuple과 같이 순차(인덱스 사용) 방식을 사용하지 않고, key를 통해서만 연관된 value를 얻어올 수 있는 구조
+    {key1:value1, key2:value2 ...}
+    key는 중복 될 수 없음
+    
+    빈 딕셔너리 : myinfo = {}
+    키 값 추가 : myinfo['name'] = '홍길동'
+    값 수정 : myinfo['name'] = '땡땡떙'   (기존 키에 값을 넣으면 수정)
+    삭제 : del myinfo['height']
+
+딕셔너리 관련 메소드
+    key의 순차구조 자료형 가져오기 : keys()    
+        자료형 : dict_keys
+        dicts.keys()
+    value의 순차구조 자료형 가져오기 : values()
+        자료형 : dict_values
+        dicts.values()
+    (key, value)의 순차구조 자료형 가져오기 : items()
+        자료형 : dict_items (key와 value를 tuple로 묶은 객체)
+        dicts.items()
+    
+    모두 지우기 : clear()
+        dicts.clear()
+
+    key를 통해 value 얻기 : get()
+        존재하지 않는 키에 접근하면 에러 발생
+        get(키)를 사용하면, 키가 없을 경우 None 값을 리턴한다
+
+    key가 딕셔너리 안에 있는지 조사하기 : in
+        a = '1' in myinfo
+        a = 1 in myinfo
+    
+    
