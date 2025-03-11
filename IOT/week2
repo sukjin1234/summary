@@ -1,3 +1,5 @@
+// 초음파 거리에 따른 LED 제어
+
 #define TRIG 13
 #define ECHO 12
 
