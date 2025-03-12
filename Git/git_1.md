@@ -1,3 +1,5 @@
+### 리눅스 명령어 정리
+'''
 touch 파일명 - 파일생성
 echo "내용" >> 파일명.확장자명 -- 파일생성
 
@@ -15,7 +17,9 @@ rm 파일명 - 파일삭제
 clear - 커널화면 정리
 
 cat 파일이름.파일형태 - 파일 내용 출력 (텍스트 파일 내용 보기?)
-
+'''
+### GIT 명령어 정리
+'''
 git init - git 파일로 설정
 git branch -M main  - branch 명을 main으로 변경
 git remote add [origin] github주소 - github와 git을 동기화 시킴
@@ -42,4 +46,5 @@ git pull - 원격과 로컬을 동기화함
 git config --list - 저장소별 설정 정보 조회
 git config --global --list - 전역 설정 정보 조회
 
-git clone 주소 . - 파일 복제(복사한 파일이 저장되는 폴더는 비어있어야함함)
+git clone 주소 . - 파일 복제(복사한 파일이 저장되는 폴더는 비어있어야함)
+'''
