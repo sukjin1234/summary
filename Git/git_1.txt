@@ -20,6 +20,9 @@ git init - git 파일로 설정
 git branch -M main  - branch 명을 main으로 변경
 git remote add [origin] github주소 - github와 git을 동기화 시킴
 (git remote remove [origin] : 원격삭제제)
+git remote -v (원격 리스트 출력)
+git remote set-url origin github주소 - 주소변경
+git remote update origin --prune - 바뀐 주소를 remote 서버와 동기화
 git status - git이 관리하는 폴더 변화 확인
 git add 파일이름.확장자명 - commit 준비
 (git add . , * : modified 된 파일이나 untracked 된 파일 모두 add)
