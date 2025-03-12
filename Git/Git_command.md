@@ -45,7 +45,22 @@ git pull  - 원격과 로컬을 동기화함
 ```
 git clone github주소 .  - 파일 복제(복사한 파일이 저장되는 폴더는 비어있어야함)
 ```
+### Git conflict , merge
+```
+1)
+git pull origin main
+git merge --continue                    장점 : 한 번의 merge로 해결 가능
+git push origin 작업브랜치              단점 : merge commit이 생겨 깔끔하지 않음 
 
+2)
+git checkout 작업브랜치
+git pull --rebase origin main              장점 : merge commit 없음
+git rebase --continue                      단점 : conflict 건이 많으면 다 고쳐야함
+충돌을 해결해 나가면서, 계속 rebase를 진행
+
+git rebase --abort
+git push -f origin 작업브랜치  
+```
 
 
 
