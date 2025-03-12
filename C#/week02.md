@@ -6,15 +6,16 @@ C#은 객체지향 언어이다.
 ```
 ## 자료형
 ```
-byte 1byte unsigned 정수형 <-> ubyte
-char 2byte(unicode) 문자형
-short 2byte signed 정수형 <-> ushort
-int 4byte 정수형    <-> uint
-long 8byte 정수형   <-> ulong
-float 4byte 실수형
-double 8byte 실수형
-string 문자열 자료형
-bool 불 자료형
+byte  -  unsigned 정수형  <-> sbyte
+다른 형들은 signed가 기본 <-> ushort, uint, ulong, ..
+정수형  byte   short   int   long
+        1byte  2byte  4byte  8byte
+
+실수형  float  double
+        4byte  8byte
+
+문자형  char(unicode)
+        2byte
 ```
 ### namespace -> class -> main 
 C#은 모든 자료형이 class로 만들어져있다.
