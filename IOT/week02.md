@@ -1,7 +1,8 @@
+```
 arduino는 아날로그 신호를 받을 수만 있음
- | 데이터를 받는 핀은 INPUT
- | 데이터를 보내는 핀은 OUTPUT
-
+데이터를 받는 핀은 INPUT
+데이터를 보내는 핀은 OUTPUT
+```
 ### 초음파 거리에 따른 LED 제어
 ```
 #define TRIG 13
