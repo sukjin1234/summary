@@ -8,6 +8,7 @@ C#은 객체지향 언어이다.
 ```
 byte  -  unsigned 정수형  <-> sbyte
 다른 형들은 signed가 기본 <-> ushort, uint, ulong, ..
+
 정수형  byte   short   int   long
         1byte  2byte  4byte  8byte
 
@@ -17,8 +18,8 @@ byte  -  unsigned 정수형  <-> sbyte
 문자형  char(unicode)
         2byte
 ```
-### namespace -> class -> main 
 C#은 모든 자료형이 class로 만들어져있다.
+### namespace -> class -> main 
 ## 기본구조
 ```
 namespace FirstProgram   // 프로젝트 이름 
@@ -44,7 +45,7 @@ int.Parse()  -  () 안에 타입을 int로 변경
 .ToString()  -  . 앞에 타입을 string으로 변경
 .GetType()   -  . 앞에 타입을 반환
 
-string + int -> string   python과 다름
+string + int -> string    ex) "빼기 : " + result 
 문자열 연결 연산자로 동작
 
 string.Format("{0},{...}",변수명,...)  python과 같음
@@ -53,7 +54,7 @@ $"{변수명}"  -  문자열보간법
 Environment.NewLine  == "\r\n"    - 줄바꿈과 같음(모든 운영체제에서 줄바꿈됨)
 
 int,float,double,long ... 끼리는 캐스트 연산자 사용 가능 O
-string만 불가 X
+string 만 불가 X
 
 python처럼 string 인덱싱 가능
 하지만 인덱싱하면 char 타입으로 바뀜
