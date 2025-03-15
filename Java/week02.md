@@ -1,4 +1,14 @@
 ## Java 정리
+### 기본 형태
+```
+package 폴더명;
+
+public class 파일명{
+        public static void main(String[] args){
+
+        }
+}
+```
 ### 단축키 
 ```
 main + ctrl + space  ->  main method 단축키
