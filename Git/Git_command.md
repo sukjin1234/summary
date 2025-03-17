@@ -57,9 +57,12 @@ git checkout 작업브랜치
 git pull --rebase origin main              장점 : merge commit 없음
 git rebase --continue                      단점 : conflict 건이 많으면 다 고쳐야함
 충돌을 해결해 나가면서, 계속 rebase를 진행
-
 git rebase --abort
 git push -f origin 작업브랜치  
+```
+### Git push한 파일 내리기?
+```
+$ git rm --cached 파일명/폴더명
 ```
 
 
