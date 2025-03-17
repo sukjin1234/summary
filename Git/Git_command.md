@@ -6,6 +6,9 @@ rm -r .git  - git init 취소
 
 .gitignore  - 이 파일에 적은 파일명들은 git에서 관리하지 않음
 (push를 해도 원격레포지토리에 올라가지 않음)
+
+git config --global user.email "abc@abc.com"  -- user.email 변경
+git config --global user.name "홍길동"  -- user.name 변경
 ```
 ### Git 원격 설정
 ```
