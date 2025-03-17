@@ -30,6 +30,10 @@ git reset   -git add로 올린 파일 취소
 ```
 git log  - commit 된 기록들을 보여줌
 (git log --oneline   -commit된 기록들을 짧게 보여줌)
+git log --oneline --decorate  현재 branch가 어떤 commit을 가르키고 있는지 확인
+git log --oneline --decorate --graph --all  현재 브랜치가 가리키고 있는 히스토리가 무엇이고 어떻게 갈라져 나왔는지 보여준다
+
+git checkout -b branch name   -  branch를 만들면서 checkout까지 한 번
 git checkout (commit 16진수)   - 예전 기록으로 돌아감
 (git checkout -, branch name    - 현재 상태로 돌아옴)
 
