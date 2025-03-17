@@ -25,7 +25,7 @@ git remote update origin --prune    -바뀐 주소를 remote 서버와 동기화
 git status  - git이 관리하는 폴더 변화 확인
 git add 파일이름.확장자명  - commit 준비 (add ., * : modified 된 파일이나 untracked 된 파일 모두 add)
 git commit -m "메모할 내용"  - git에 올림
-git push -u origin main  -commit 내용을 github에 올림
+git push -u origin main  -commit 내용을 github에 올림 // branch main과 연결
 
 git reset   -git add로 올린 파일 취소
 ```
