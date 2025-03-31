@@ -71,6 +71,10 @@ git push -f origin 작업브랜치
 ```
 $ git rm --cached 파일명/폴더명
 ```
+### Git branch
+```
+git branch (-a, -r)  -- branch 목록 보기
+git branch -d 브랜치명  --branch 삭 
 
 
 
