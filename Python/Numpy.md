@@ -75,6 +75,7 @@
 | `.sum()` | 배열의 합 반환, ()안에 axis=1 행끼리, axis=0 열끼리|
 | `.corrocef(x,y)` | 요소들의 상관관계 계산 (다차원 가능)|
 ```
+** corrocef(x,y) **
  결과는 x와x의 상관관계 Cxx, x와y Cxy, y와x Cyx, y와y Cyy|
 [[Cxx, Cxy],
  [Cyx, Cyy]] 반환
