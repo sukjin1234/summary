@@ -1,14 +1,20 @@
-### telegram bot 
-```
-git clone https://github.com/python-telegram-bot/python-telegram-bot
-```
 ### 라즈베리파이 한글 버전 설치
 ```Linux
 sudo apt-get install fonts-unfonts-core -y
 sudo apt-get install ibus ibus-hangul -y
 sudo reboot
 ```
-### 카메라로 사진 찍어서 화면에 보여주는 코드
+
+---
+
+## telegram bot 
+```
+git clone https://github.com/python-telegram-bot/python-telegram-bot
+```
+
+---
+
+## 카메라로 사진 찍어서 화면에 보여주는 코드
 ```python
 import cv2
 import sys
@@ -30,30 +36,17 @@ while True:
   if cv2.waitKey(1)&0xFF == ord('q'):
     break
 
-  time.sleep(10)
+  time.sleep(10) # 10초 동안 쉼
   cv2.imwrite('image.jpg', image) # image를 image.jpg로 저장함
 
 cap.release()
 cv2.destroyAllWindows()
 ```
-### python-telegram-bot/examples/timerbot.py
-```python
-# main() 메소드 안에 있는 Application.builder().token("TOKEN",~~)
-# TOKEN 부분에 자신의 봇이 부여받은 TOKEN 값 적으면 됨
-def main() -> None:
-  """Run bot."""
-  application = Application.builder().token("TOKEN", ~~)
 
-  #on different commmands - answer in Telegram
-  applicatrion.add_handler(CommandHandler("Message", method)
+---
 
-  # method 부분에 Telegram bot에 /Message 를 했을 때 실행될 메소드를 넣음
-  # ex)
-async def test(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-  await update.message.reply.text("hi tele bot")
-application.add_handler(CommandHandler("Hi",test))
-```
-### 실제 코드에 takePhoto 메소드 적용한 코드
+> python-telegram-bot/examples/timerbot.py
+## 실제 코드에 takePhoto 메소드(사진 찍는 코드) 적용한 코드
 ```python
 #!/usr/bin/env python
 # pylint: disable=unused-argument
@@ -90,7 +83,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
-''' takePhoto method '''
+# takePhoto method : 카메라로 찍은 사진 저장해줌
 def takePhoto():
   cap = cv2.VideoCapture(0)
   cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
@@ -122,10 +115,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def alarm(context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send the alarm message."""
-    takePhoto() '''takePhoto() 실행'''
+    # takePhoto() 실행
+    takePhoto() 
     job = context.job
     await context.bot.send_message(job.chat_id, text=f"Beep! {job.data} seconds are over!")
-    await context.bot.sendPhoto(job.chat_id, photo=open('./image.jpg','rb') '''사용자에게 사진을 보내줌'''
+    # 사용자에게 사진을 보내줌
+    await context.bot.sendPhoto(job.chat_id, photo=open('./image.jpg','rb') 
 
 
 def remove_job_if_exists(name: str, context: ContextTypes.DEFAULT_TYPE) -> bool:
@@ -185,3 +180,12 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 ```
+
+---
+
+### 코드 설명
+| | |
+|---|---|
+| import cv2 | 영상 처리에 필요한 python 라이브러리 |
+| TOKEN 연결하는법 | `application = Application.builder().token("TOKEN").build()` TOKEN 부분에 부여받은 token 입력 |
+| 나만의 메소드 불러오는 방법 | main() 메소드에 `application.add_handler(CommandHandler("Message", method))` 추가 <br> 채팅으로 /Message를 보냈을 때 등록한 method 실행 |
