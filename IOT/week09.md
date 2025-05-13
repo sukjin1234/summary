@@ -37,17 +37,8 @@ while True:
     break
 
   time.sleep(10) # 10초 동안 쉼
-  cv2.imwrite('image.jpg', image) # image를 image.jpg로 저장함
+ 함
 
-cap.release()
-cv2.destroyAllWindows()
-```
-
----
-
-> python-telegram-bot/examples/timerbot.py
-## 실제 코드에 takePhoto 메소드(사진 찍는 코드) 적용한 코드
-```python
 #!/usr/bin/env python
 # pylint: disable=unused-argument
 # This program is dedicated to the public domain under the CC0 license.
