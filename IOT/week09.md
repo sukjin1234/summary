@@ -65,10 +65,67 @@ Simple Bot to send timed Telegram messages.
 This Bot uses the Application class to handle the bot and the JobQueue to send
 timed messages.
 
-행
+First, a few handler functions are defined. Then, those functions are passed to
+the Application and registered at their respective places.
+Then, the bot is started and runs until we press Ctrl-C on the command line.
+
+Usage:
+Basic Alarm Bot example, sends a message after a set time.
+Press Ctrl-C on the command line or send a signal to the process to stop the
+bot.
+
+Note:
+To use the JobQueue, you must install PTB via
+`pip install "python-telegram-bot[job-queue]"`
+"""
+
+import logging
+import cv2 '''필요한 라이브러리 (cv2, sys, time)'''
+import sys 
+import time 
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+
+# Enable logging
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+)
+''' takePhoto method '''
+def takePhoto():
+  cap = cv2.VideoCapture(0)
+  cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+  cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+  if not cap.isOpened():
+    print("camera open error")
+    return
+  ret, image = cap.read() # ret에 이미지가 읽어졌는지 알려줌
+  if not ret:
+    print("frame read error")
+    return
+  cv2.imshow('CAMERA', image)
+  time.sleep(1)
+  cv2.imwrite('image.jpg', image) # image를 image.jpg로 저장함
+  
+  cap.release()
+  cv2.destroyAllWindows()
+
+# Define a few command handlers. These usually take the two arguments update and
+# context.
+# Best practice would be to replace context with an underscore,
+# since context is an unused local variable.
+# This being an example and not having context present confusing beginners,
+# we decided to have it present as context.
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Sends explanation on how to use the bot."""
+    await update.message.reply_text("Hi! Use /set <seconds> to set a timer")
+
+
+async def alarm(context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Send the alarm message."""
+    takePhoto() '''takePhoto() 실행'''
     job = context.job
     await context.bot.send_message(job.chat_id, text=f"Beep! {job.data} seconds are over!")
-    await context.bot.sendPhoto(job.chat_id, photo=open('./image.jpg','rb') # 사용자에게 사진을 보여줌
+    await context.bot.sendPhoto(job.chat_id, photo=open('./image.jpg','rb') '''사용자에게 사진을 보내줌'''
 
 
 def remove_job_if_exists(name: str, context: ContextTypes.DEFAULT_TYPE) -> bool:
