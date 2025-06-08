@@ -1,15 +1,23 @@
-### 라즈베리파이 한글 버전 설치
-```Linux
-sudo apt-get install fonts-unfonts-core -y
-sudo apt-get install ibus ibus-hangul -y
-sudo reboot
+### OpenCV 설치
+```
+pip install opencv-contrib-python
+sudo apt-get install python3-opencv
 ```
 
 ---
 
 ## telegram bot 
 ```
-git clone https://github.com/python-telegram-bot/python-telegram-bot
+git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive
+```
+
+---
+
+### 라즈베리파이 한글 버전 설치
+```Linux
+sudo apt-get install fonts-unfonts-core -y
+sudo apt-get install ibus ibus-hangul -y
+sudo reboot
 ```
 
 ---
