@@ -34,7 +34,7 @@
 * MAC 주소 4개가 사용됨
 
 ### 주소 체계
-<img>
+![Image](https://github.com/user-attachments/assets/849b60b7-eb26-43d1-976e-500c9fbfe0d4)
 
 | To DS | From DS | Address1 | Adress2 | Adress3 | Adress4 |
 |-------|---------|----------|---------|---------|---------|
@@ -59,7 +59,7 @@
  * RTS, CTS 를 사용하면, 충돌이 발생할 확률이 줄어듦
 
 ### Hidden Terminal Problem (숨겨진 노드 문제)
- <img>
+![Image](https://github.com/user-attachments/assets/88ff80f8-edef-4cba-88e4-689ce5746465)
 
  * 중간 터미널(A)은 양쪽 터미널(B,C)와 통신이 가능
  * 양쪽 터미널(B,C)는 서로 통신을 감지하지 못함
