@@ -23,6 +23,8 @@ echo "setting up TinyOS on source path $TOSROOT"
 $ vim ~/.bashrc
   끝줄에 추가
   source ~/tinyos.env
+
+.bashrc 개인용 환경설정 파일??
 ```
 > 3 실행
 ```
@@ -37,6 +39,8 @@ $ sudo mv libgetenv.so /usr/lib
 ```
 ### NesC 설치
 ```
+tar -xvzf -> zip 파일 압축 풀기
+
 $ mv ~/jni/tinyos/nesc-1.3.4.tar.gz ~/
 $ tar –xvzf nesc-1.3.4.tar.gz
 $ cd nesc-1.3.4
@@ -67,6 +71,8 @@ $ cd 2024_inhatc/Zigbee/Oscilloscope/
 ```
 ### tos.py 복사
 ```
+2024_inhatc/Zigbee 에서 실행
+
 $ mv ./tos.py /opt/tinyos-2.x/support/sdk/python/tos.py
 ```
 > 실행방법 (mote 연결후)
